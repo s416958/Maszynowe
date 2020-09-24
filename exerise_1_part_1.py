@@ -21,7 +21,7 @@ df_data['price_meters'] = (df_data['price']/df_data['meters']).round(3)
 #Choosing data with number of rooms (=>3), price and
 #price for square meter (lower than mean price for square meter)
 df_select_data = df_data.loc[
-                (df_data['nr_rooms'] >= 3) &
+                df_data['nr_rooms'] >= 3 &
                 (df_data['price_meters'] <
                  round(float(df_data['price_meters'].mean()), 2))][
                  ['nr_rooms', 'price', 'price_meters']]
