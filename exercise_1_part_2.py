@@ -6,7 +6,8 @@ df_data = pd.read_csv(
           'train.tsv',
           sep='\t',
           names=[
-           'price', 'nr_rooms', 'meters', 'floors', 'location', 'description'])
+           'price', 'nr_rooms', 'meters', 'floors', 'location', 
+                    'description'])
 pd.options.display.float_format = '{:.2f}'.format
 
 df_description = pd.read_csv('description.csv')
