@@ -15,7 +15,7 @@ with open('out0.csv', 'w') as file:
     file.write(str(mean_price))
 
 #2
-#Counting price for square meter and round to 1 zl
+#Counting price for square meter and round
 df_data['price_meters'] = (df_data['price']/df_data['meters']).round(3)
 
 #Choosing data with number of rooms (=>3), price and
