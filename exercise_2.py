@@ -87,7 +87,7 @@ reg.fit(col_df_data_public_q[['YearsCode']], col_df_data_public_q[['Age']])
 mean_squared_error(col_df_data_public_q[['Age']],
                    reg.predict(col_df_data_public_q[['YearsCode']]))
 
-
+# 4
 reg = linear_model.LinearRegression()
 reg.fit(col_df_data_public_q[['Age1stCode', 'YearsCode']],
         col_df_data_public_q[['Age']])
