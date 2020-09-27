@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-#4
-#Setting to display (max. 100 columns)
+# 4
+# Setting to display (max. 100 columns)
 pd.set_option('display.max_columns', 100)
 
-#Reading data
+# Reading data
 df_data_survey_schema = pd.read_csv('survey_results_schema.csv', header=0)
 df_data_survey_public = pd.read_csv(
                  'survey_results_public.csv',
@@ -13,25 +13,25 @@ df_data_survey_public = pd.read_csv(
                  usecols=['Respondent', 'WorkWeekHrs', 'Age'],
                  index_col=['Respondent'])
 
-#Deleting NA data
+# Deleting NA data
 df_data_survey_public.dropna(inplace=True)
 
-#Checking types
+# Checking types
 df_data_survey_public.dtypes
 
-#Checking more information
+# Checking more information
 df_data_survey_public.info()
 
-#Checking unique values
+# Checking unique values
 column_values = df_data_survey_public[['Age']].values.ravel()
 unique_values = pd.unique(column_values)
 print(unique_values)
 
-#Rounding and checking values
+# Rounding and checking values
 df_data_survey_public['Age'].round(0)
 column_values = df_data_survey_public['Age'].values.ravel()
 
-#Checking duplicates
+# Checking duplicates
 unique_values = pd.unique(column_values)
 print(unique_values)
 
@@ -40,14 +40,14 @@ column_values = df_data_survey_public['WorkWeekHrs'].values.ravel().astype('int6
 unique_values = pd.unique(column_values)
 print(unique_values)
 
-#Selecting respondents who works 160 h per week
+# Selecting respondents who works 160 h per week
 df_data_survey_public = df_data_survey_public[df_data_survey_public.WorkWeekHrs < 161]
 
-#Changing type
+# Changing type
 df_data_survey_public = df_data_survey_public.astype('int64', copy=False)
 
-#5
-#Making a chart
+# 5
+# Making a chart
 plt.plot(df_data_survey_public['Age'],
          df_data_survey_public['WorkWeekHrs'],
          'ro',
@@ -62,17 +62,17 @@ plt.xlabel('Wiek respondenta')
 plt.ylabel('Przepracowanie godziny w tygodniu')
 plt.show()
 
-#Dropping NA data
+# Dropping NA data
 df_data_public_gender.dropna(inplace=True)
 
-#Checking number of genders and unique names
+# Checking number of genders and unique names
 column_values = df_data_public_gender['Gender'].values.ravel()
 unique_values = pd.unique(column_values)
 print(unique_values)
 df_data_public_gender['Gender'] = df_data_public_gender['Gender'].astype(str)
 df_data_public_gender.info()
 
-#Selecting only man and woman
+# Selecting only man and woman
 df_data_public_gender = df_data_public_gender.loc[
                         (df_data_public_gender['Gender'] == 'Man') |
                         (df_data_public_gender['Gender'] == 'Woman')]
