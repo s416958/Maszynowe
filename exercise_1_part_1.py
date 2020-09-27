@@ -7,7 +7,7 @@ df_data = pd.read_csv(
         sep='\t',
         names=['price', 'nr_rooms', 'meters', 'floors', 'location', 'description'])
 
-#Counting mean of apartments price and round to 1 zl
+#Counting mean of apartments price and round
 mean_price = round(df_data['price'].mean(), 3)
 
 #Saving mean_price in out0.csv file
