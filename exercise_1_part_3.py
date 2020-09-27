@@ -36,12 +36,14 @@ unique_values = pd.unique(column_values)
 print(unique_values)
 
 df_data_survey_public['WorkWeekHrs'].round(0)
-column_values = df_data_survey_public['WorkWeekHrs'].values.ravel().astype('int64')
+column_values = 
+df_data_survey_public['WorkWeekHrs'].values.ravel().astype('int64')
 unique_values = pd.unique(column_values)
 print(unique_values)
 
 # Selecting respondents who works 160 h per week
-df_data_survey_public = df_data_survey_public[df_data_survey_public.WorkWeekHrs < 161]
+df_data_survey_public = 
+df_data_survey_public[df_data_survey_public.WorkWeekHrs < 161]
 
 # Changing type
 df_data_survey_public = df_data_survey_public.astype('int64', copy=False)
